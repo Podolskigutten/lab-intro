@@ -22,9 +22,13 @@ def lab00():
             print(f"The Image capture did not succeed. Is the camera ok?")
             break
 
-        cv2.imshow(window_title, frame)
 
-        delay_ms = 15
+        edges = cv2.Canny(frame, 100, 200)
+        blurry = cv2.blur(frame, ksize=(200,200))
+        cv2.imshow(window_title, blurry)
+        #cv2.imshow("Edges", edges)
+
+        delay_ms = 10
         key = cv2.waitKey(delay_ms)
 
         if key >= 0:
