@@ -2,8 +2,8 @@ import cv2
 
 
 def lab00():
-    device_id = 1
-    cap = cv2.VideoCapture(device_id)
+    device_id = 0
+    cap = cv2.Videocapture(device_id)
 
     if not cap.isOpened():
         print(f"Could not open camera {device_id}")
